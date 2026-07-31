@@ -1,0 +1,2149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دار بيروت | المنيو</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Rakkas&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6ED;
+    --cream-deep:#F2E9D8;
+    --paper:#FFFDF9;
+    --mocha-ink:#2E2015;
+    --mocha:#5C4130;
+    --mocha-soft:#8A6A50;
+    --gold:#C6A15B;
+    --gold-bright:#DEBD7E;
+    --gold-line: linear-gradient(90deg, transparent, #C6A15B, transparent);
+    --shadow: 0 10px 30px rgba(46,32,21,0.08);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--mocha-ink);
+    font-family:'Tajawal', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Aref Ruqaa', serif;
+  }
+
+  /* ---------- background texture ---------- */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background:
+      radial-gradient(circle at 15% 8%, rgba(198,161,91,0.10), transparent 40%),
+      radial-gradient(circle at 90% 15%, rgba(198,161,91,0.08), transparent 35%),
+      radial-gradient(circle at 50% 95%, rgba(92,65,48,0.06), transparent 40%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* ---------- ornamental divider ---------- */
+  .ornament{
+    display:flex; align-items:center; justify-content:center; gap:14px;
+    margin:0 auto;
+  }
+  .ornament .line{ height:1px; width:64px; background:var(--gold-line); }
+  .ornament svg{ width:22px; height:22px; color:var(--gold); }
+
+  /* ---------- HEADER / HERO ---------- */
+  header.hero{
+    position:relative;
+    z-index:1;
+    padding:56px 20px 40px;
+    text-align:center;
+    background:
+      linear-gradient(180deg, var(--cream-deep) 0%, var(--cream) 78%);
+    border-bottom:1px solid rgba(198,161,91,0.35);
+  }
+
+  .logo-slot{
+    width:auto;
+    max-width:280px;
+    margin:0 auto 20px;
+    display:flex; align-items:center; justify-content:center;
+    flex-direction:column;
+    gap:8px;
+    color:var(--mocha-soft);
+    position:relative;
+  }
+  .logo-slot img{
+    display:block;
+    max-width:280px;
+    max-height:220px;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+  }
+  .logo-slot span{ font-size:12.5px; letter-spacing:.5px; font-weight:700; }
+  .logo-slot small{ font-size:10.5px; color:var(--mocha-soft); opacity:.85; }
+
+  .eyebrow{
+    letter-spacing:4px;
+    font-size:12px;
+    color:var(--mocha-soft);
+    text-transform:uppercase;
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  header.hero h1{
+    font-family:'Rakkas', 'Aref Ruqaa', serif;
+    font-size:clamp(42px, 8vw, 72px);
+    margin:0;
+    color:var(--mocha-ink);
+    font-weight:400;
+    letter-spacing:1px;
+    line-height:1.25;
+  }
+  header.hero .tagline{
+    margin:14px 0 22px;
+    color:var(--mocha);
+    font-size:16px;
+    font-weight:400;
+  }
+
+  /* ---------- STICKY NAV ---------- */
+  nav.menu-nav{
+    position:sticky; top:0; z-index:20;
+    background:rgba(251,246,237,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(198,161,91,0.35);
+    overflow-x:auto;
+    white-space:nowrap;
+    padding:12px 16px;
+    scrollbar-width:thin;
+  }
+  nav.menu-nav::-webkit-scrollbar{ height:5px; }
+  nav.menu-nav::-webkit-scrollbar-thumb{ background:var(--gold); border-radius:10px; }
+
+  .nav-inner{
+    display:inline-flex;
+    gap:8px;
+  }
+  .nav-pill{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:8px 16px;
+    border-radius:30px;
+    background:var(--paper);
+    border:1px solid rgba(198,161,91,0.4);
+    color:var(--mocha);
+    text-decoration:none;
+    font-size:13.5px;
+    font-weight:500;
+    transition:all .25s ease;
+  }
+  .nav-pill:hover, .nav-pill.active{
+    background:var(--mocha-ink);
+    color:var(--gold-bright);
+    border-color:var(--mocha-ink);
+  }
+
+  /* ---------- SECTIONS ---------- */
+  main{ position:relative; z-index:1; max-width:1080px; margin:0 auto; padding:10px 20px 60px; }
+
+  .menu-section{ padding-top:52px; scroll-margin-top:70px; }
+
+  .section-head{
+    display:flex; align-items:center; gap:16px;
+    margin-bottom:26px;
+  }
+  .section-icon{
+    width:46px; height:46px; flex:0 0 auto;
+    border-radius:50%;
+    background:var(--mocha-ink);
+    color:var(--gold-bright);
+    display:flex; align-items:center; justify-content:center;
+    font-size:20px;
+    box-shadow:var(--shadow);
+  }
+  .section-head h2{
+    font-size:28px;
+    margin:0;
+    color:var(--mocha-ink);
+    white-space:nowrap;
+  }
+  .section-rule{
+    flex:1;
+    height:1px;
+    background:var(--gold-line);
+  }
+
+  .dish-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:18px 26px;
+  }
+  @media (max-width:720px){
+    .dish-grid{ grid-template-columns:1fr; }
+  }
+
+  .dish{
+    background:var(--paper);
+    border:1px solid rgba(198,161,91,0.28);
+    border-radius:14px;
+    overflow:hidden;
+    position:relative;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .dish:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow);
+    border-color:var(--gold);
+  }
+  .dish-media{
+    aspect-ratio:16/10;
+    width:100%;
+    background:
+      repeating-linear-gradient(135deg, rgba(198,161,91,0.07) 0 10px, transparent 10px 20px),
+      var(--cream-deep);
+    border-bottom:1px dashed rgba(198,161,91,0.5);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:6px;
+    color:var(--mocha-soft);
+  }
+  .dish-media span{ font-size:11.5px; font-weight:500; letter-spacing:.2px; }
+  .dish-body{ padding:16px 20px 18px; }
+  .dish-top{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+  }
+  .dish-name{
+    margin:0;
+    font-size:17px;
+    font-weight:700;
+    color:var(--mocha-ink);
+    font-family:'Tajawal',sans-serif;
+    display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  }
+  .dots{
+    flex:1;
+    border-bottom:1.5px dotted rgba(138,106,80,0.45);
+    height:0;
+    margin-bottom:5px;
+  }
+  .dish-price{
+    font-weight:800;
+    font-size:16px;
+    color:var(--mocha);
+    white-space:nowrap;
+  }
+  .dish-price .sar{ font-size:11px; font-weight:600; color:var(--mocha-soft); }
+  .dish-desc{
+    margin:8px 0 0;
+    font-size:13.5px;
+    line-height:1.75;
+    color:#5c4a3c;
+  }
+  .badge{
+    background:var(--gold);
+    color:var(--mocha-ink);
+    font-size:10px;
+    font-weight:800;
+    padding:3px 9px;
+    border-radius:20px;
+    letter-spacing:.3px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    position:relative; z-index:1;
+    text-align:center;
+    padding:50px 20px 40px;
+    color:var(--mocha-soft);
+    font-size:13px;
+  }
+  footer .brand{
+    font-family:'Aref Ruqaa', serif;
+    font-size:24px;
+    color:var(--mocha-ink);
+    margin-bottom:6px;
+  }
+
+  /* ---------- back to top ---------- */
+  .to-top{
+    position:fixed;
+    left:20px; bottom:20px;
+    width:44px; height:44px;
+    border-radius:50%;
+    background:var(--mocha-ink);
+    color:var(--gold-bright);
+    display:flex; align-items:center; justify-content:center;
+    text-decoration:none;
+    box-shadow:var(--shadow);
+    opacity:0; pointer-events:none;
+    transition:opacity .3s ease;
+    z-index:30;
+    font-size:18px;
+  }
+  .to-top.show{ opacity:1; pointer-events:auto; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .dish, .to-top, .nav-pill{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="logo-slot">
+    <img src="logo.jpeg">
+  </div>
+  <div class="eyebrow">Dar Beirut · Since Flavor</div>
+  <h1>دار بيروت</h1>
+  <div class="ornament" style="margin:16px 0;">
+    <span class="line"></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z"/></svg>
+    <span class="line"></span>
+  </div>
+  <p class="tagline">نكهات بيروت الأصيلة، بلمسة عصرية فاخرة</p>
+</header>
+
+<nav class="menu-nav">
+  <div class="nav-inner">
+<a href="#breakfast" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18"/><path d="M6 18a6 6 0 0112 0"/><path d="M12 5.5v3"/><path d="M7.6 8.6l1.8 1.8"/><path d="M16.4 8.6l-1.8 1.8"/></svg><span>الإفطار</span></a>
+<a href="#mokabbelat" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="2.6"/></svg><span>المقبلات</span></a>
+<a href="#salads" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18.5C5 11 9 6.5 18 6c.5 8-4.5 12.5-12 12.5z"/><path d="M6.5 18C8.5 15.5 11 13 15 9.5"/></svg><span>السلطات</span></a>
+<a href="#hot-mokabbelat" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c1.6 2.2-.6 3.6-.6 6a2.6 2.6 0 005.2 0c0-.8-.4-1.6-.4-1.6 1.2.9 2.1 2.6 2.1 4.3a5.3 5.3 0 11-10.6 0c0-2.6 1.3-4.3 2.6-5.4.4.8.8 1.2 1.7 1.2z"/></svg><span>المقبلات الساخنة</span></a>
+<a href="#grills" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="4.5" y1="19.5" x2="19.5" y2="4.5"/><circle cx="8.3" cy="15.7" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="15.7" cy="8.3" r="1.5"/></svg><span>المشويات</span></a>
+<a href="#mains" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 3v6.5a1.8 1.8 0 001.8 1.8V21"/><path d="M7.5 3v4M9.7 3v4"/><path d="M16.8 3c-1.6 0-2.3 1.7-2.3 3.5v3c0 1.2.7 2 2 2V21"/></svg><span>الأطباق الرئيسية</span></a>
+<a href="#western" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 9.5a7.5 3 0 0115 0z"/><line x1="4" y1="12.5" x2="20" y2="12.5"/><path d="M5 15.5h14a7 3 0 01-14 0z"/></svg><span>الأطباق الغربية</span></a>
+<a href="#soup" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16a8 5.2 0 01-16 0z"/><path d="M9.3 6c0 1.1-1.1 1.1-1.1 2.2M14.7 6c0 1.1-1.1 1.1-1.1 2.2"/></svg><span>الشوربة</span></a>
+<a href="#pizza" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l8.5 16h-17z"/><circle cx="12" cy="12.3" r=".9"/><circle cx="9.8" cy="15.6" r=".9"/><circle cx="14.2" cy="15.6" r=".9"/></svg><span>البيتزا</span></a>
+<a href="#pasta" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5a7.5 7.5 0 100 15 5.6 5.6 0 100-11.2 3.7 3.7 0 100 7.4 1.9 1.9 0 110-3.8"/></svg><span>الباستا</span></a>
+<a href="#desserts" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 20l7.5-14.5L19.5 20z"/><path d="M4.5 20h15"/><circle cx="12" cy="9" r="1"/></svg><span>الحلويات</span></a>
+<a href="#cold-drinks" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 3.5h7.6l-1 14.6a2.8 2.8 0 01-2.8 2.6h0a2.8 2.8 0 01-2.8-2.6L8.2 3.5z"/><path d="M12 8v6M9.7 9.4l4.6 3.2M14.3 9.4l-4.6 3.2"/></svg><span>المشروبات الباردة</span></a>
+<a href="#hot-drinks" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9.2h11v4.6a4 4 0 01-4 4H9a4 4 0 01-4-4V9.2z"/><path d="M16 10.3h1.4a2 2 0 010 4H16"/><path d="M8.2 4.8c0 1.1-1.1 1.1-1.1 2.2M12.4 4.8c0 1.1-1.1 1.1-1.1 2.2"/></svg><span>المشروبات الساخنة</span></a>
+<a href="#mojito" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 5h11l-4.5 8v7"/><path d="M9.3 6l2.7 4.2M14.7 6L12 10.2"/><path d="M9.5 20h5"/></svg><span>الموهيتو</span></a>
+<a href="#juices" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16M6.6 6.6l10.8 10.8M17.4 6.6L6.6 17.4"/></svg><span>العصائر الطازجة</span></a>
+<a href="#soda" class="nav-pill"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.2 3h3.6v2.8l1.8 1.9v10.8a2 2 0 01-2 2h-3.2a2 2 0 01-2-2V7.7l1.8-1.9V3z"/><circle cx="11.2" cy="13.4" r=".6"/><circle cx="13.2" cy="16.3" r=".6"/></svg><span>المشروبات الغازية</span></a>
+
+  </div>
+</nav>
+
+<main>
+
+    <section id="breakfast" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18"/><path d="M6 18a6 6 0 0112 0"/><path d="M12 5.5v3"/><path d="M7.6 8.6l1.8 1.8"/><path d="M16.4 8.6l-1.8 1.8"/></svg></span>
+        <h2>الإفطار</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="برلوش حلومي">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">برلوش حلومي</h3>
+              <span class="dots"></span>
+              <span class="dish-price">27<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">خبز بريوش قطني يعلوه شرائح الحلومي المشوية مع لمسة من الطماطم والزعتر.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="سلطة دار بيروت إفطار">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">سلطة دار بيروت إفطار</h3>
+              <span class="dots"></span>
+              <span class="dish-price">33<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">سلطة بيروت الخاصة تجمع بين تشكيلة الخضار الطازجة والفواكه المختارة مع صوص التمر المميز بتوازن فريد.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="ورق عنب">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">ورق عنب</h3>
+              <span class="dots"></span>
+              <span class="dish-price">23<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">6 حبات من ورق العنب الفاخر، محشوة بخلطة الأرز والأعشاب مع لمسة حامضة من دبس الرمان.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="حمسة حلومي">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">حمسة حلومي</h3>
+              <span class="dots"></span>
+              <span class="dish-price">29<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مكعبات حلومي محمرة مع الطماطم والفلفل الملون والزيتون والزعتر البري.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="فول لبناني">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">فول لبناني</h3>
+              <span class="dots"></span>
+              <span class="dish-price">16<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">فول مدمس بالخلطة اللبنانية، يُقدم بلمسة زيت الزيتون والطحينة والكمون.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="حمص باللحمة">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">حمص باللحمة</h3>
+              <span class="dots"></span>
+              <span class="dish-price">29<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">طبق الحمص التقليدي يعلوه قطع لحم طازجة مع المكسرات وزيت الزيتون.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="صحن خضار">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">صحن خضار</h3>
+              <span class="dots"></span>
+              <span class="dish-price">10<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">طبق صحي ومنعش يتكون من مجموعة متنوعة من الخضروات الطازجة المقطعة بشكل مرتب وجذاب.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="حمسة كبدة طازج">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">حمسة كبدة طازج</h3>
+              <span class="dots"></span>
+              <span class="dish-price">29<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">كبدة غنم طازجة مطهوة بتتبيلة دار بيروت الخاصة مع الخضار.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="بنديكت بيض مع سلمون">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بنديكت بيض مع سلمون</h3>
+              <span class="dots"></span>
+              <span class="dish-price">37<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">خبز خاص يعلوه بيض بوشيه مع شرائح السلمون المدخن وصوص الأفوكادو الغني والصوص الفرنسي.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="لبنة مع الزعتر">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">لبنة مع الزعتر</h3>
+              <span class="dots"></span>
+              <span class="dish-price">19<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">لبنة طازجة مغطاة بالزعتر وزيت الزيتون.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="بنديكت بيض مع مشروم">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بنديكت بيض مع مشروم</h3>
+              <span class="dots"></span>
+              <span class="dish-price">34<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">خبز خاص يعلوه بيض بوشيه فوق طبقة من المشروم المحمر مع صوص الريحان والأفوكادو والصوص الفرنسي.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="تاكو دجاج">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">تاكو دجاج</h3>
+              <span class="dots"></span>
+              <span class="dish-price">29<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">خبز التاكو محشو بقطع الدجاج المتبلة مع الخضار الطازجة وصوصنا الخاص، طعم يجمع القرمشة والطراوة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="أومليت بأجبان">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">أومليت بأجبان</h3>
+              <span class="dots"></span>
+              <span class="dish-price">24<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">بيض مطهو بعناية ومحشو بمزيج من الأجبان الذائبة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="فتة دار بيروت إفطار">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">فتة دار بيروت إفطار</h3>
+              <span class="dots"></span>
+              <span class="dish-price">29<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">طبقات من الخبز المقرمش والحمص مع اللحم المفروم، مغطاة بصوص الزبادي والمكسرات.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="بريوش أومليت">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بريوش أومليت</h3>
+              <span class="dots"></span>
+              <span class="dish-price">27<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">خبز بريوش قطني يعلوه طبقة من بيض الأومليت الخفيف والجبن.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="تاكو فلافل">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">تاكو فلافل</h3>
+              <span class="dots"></span>
+              <span class="dish-price">24<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">فلافل بتقديم عصري داخل خبز التاكو مع صوص الطحينة والخضار والمخلل.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="بيض اسكرامبل كرواسون">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بيض اسكرامبل كرواسون</h3>
+              <span class="dots"></span>
+              <span class="dish-price">29<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">كرواسون باريسي هش محشو ببيض مخفوق كريمي.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="حمسة لحم">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">حمسة لحم</h3>
+              <span class="dots"></span>
+              <span class="dish-price">29<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قطع لحم طرية محمرة مع الخضار والبهارات العربية الأصيلة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="شكشوكة تركية">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">شكشوكة تركية</h3>
+              <span class="dots"></span>
+              <span class="dish-price">26<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">بيض مسلوق، مطهو بصلصة الطماطم والفلفل على الطريقة العثمانية.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="حلومي مع الباذنجان">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">حلومي مع الباذنجان</h3>
+              <span class="dots"></span>
+              <span class="dish-price">29<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">تناغم مميز بين الجبن المالح والباذنجان المقلي.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="أومليت خضار">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">أومليت خضار</h3>
+              <span class="dots"></span>
+              <span class="dish-price">24<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">بيض مع قطع الفلفل الملون، البصل، والطماطم.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="mokabbelat" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="2.6"/></svg></span>
+        <h2>المقبلات</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="حمص">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">حمص</h3>
+              <span class="dots"></span>
+              <span class="dish-price">19<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">خلاصة الحمص بالطحينة، ناعم كالحرير ومزين بزيت الزيتون.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="حمص بيروتي">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">حمص بيروتي</h3>
+              <span class="dots"></span>
+              <span class="dish-price">23<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مزيج الحمص التقليدي مع الطماطم والبقدونس والكمون لمذاق بيروتي أصيل.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="حمص ريحان">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">حمص ريحان</h3>
+              <span class="dots"></span>
+              <span class="dish-price">24<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">الحمص اللبناني الشهير ممزوجاً بنكهة الريحان الإيطالي الطازج.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="بابا غنوج">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بابا غنوج</h3>
+              <span class="dots"></span>
+              <span class="dish-price">23<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">باذنجان مشوي على الفحم بخلطة الخضروات الطازجة وزيت الزيتون البكر.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="تبولة">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">تبولة</h3>
+              <span class="dots"></span>
+              <span class="dish-price">24<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">التبولة اللبنانية على أصولها، ببساطة طعم ما ينشبع.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="فتوش">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">فتوش</h3>
+              <span class="dots"></span>
+              <span class="dish-price">28<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">الفتوش اللبناني التقليدي كما تحبه، مضافاً إليه قطع المانجو الاستوائية لنكهة مبتكرة.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="salads" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18.5C5 11 9 6.5 18 6c.5 8-4.5 12.5-12 12.5z"/><path d="M6.5 18C8.5 15.5 11 13 15 9.5"/></svg></span>
+        <h2>السلطات</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="سلطة جرجير">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">سلطة جرجير</h3>
+              <span class="dots"></span>
+              <span class="dish-price">26<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">أوراق الجرجير الطازجة مع قطع التفاح والفيتا، تزينها قرمشة الجوز وحبات الرمان بلمسة البلساميك.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="تبولة كينوا">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">تبولة كينوا</h3>
+              <span class="dots"></span>
+              <span class="dish-price">29<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">التبولة برؤية عصرية، كينوا صحية مع قطع المانجو والعنب والفراولة بلمسة دبس الرمان.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="سلطة حلومي">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">سلطة حلومي</h3>
+              <span class="dots"></span>
+              <span class="dish-price">29<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">أوراق الخس العربي الطازجة المقطعة بصوص السيزر الغني، مع قطع الدجاج المشوية، وخبز الكروتون المقرمش.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="hot-mokabbelat" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c1.6 2.2-.6 3.6-.6 6a2.6 2.6 0 005.2 0c0-.8-.4-1.6-.4-1.6 1.2.9 2.1 2.6 2.1 4.3a5.3 5.3 0 11-10.6 0c0-2.6 1.3-4.3 2.6-5.4.4.8.8 1.2 1.7 1.2z"/></svg></span>
+        <h2>المقبلات الساخنة</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="كبدة دجاج مقلية">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كبدة دجاج مقلية</h3>
+              <span class="dots"></span>
+              <span class="dish-price">26<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">كبدة دجاج محضرة بطريقة دار بيروت الخاصة، بلمسة مقرمشة وحامضة غنية بالنكهات الأصيلة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="بطاطا حارة">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بطاطا حارة</h3>
+              <span class="dots"></span>
+              <span class="dish-price">29<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مكعبات البطاطس المقرمشة والمقلية مع لمسة من الفلفل الحار والليمون.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="بطاطا مقلية">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بطاطا مقلية</h3>
+              <span class="dots"></span>
+              <span class="dish-price">13<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">أصابع البطاطس الذهبية والمقرمشة محضرة بخلطة بهارات دار بيروت الخاصة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="ستيك موزاريلا">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">ستيك موزاريلا</h3>
+              <span class="dots"></span>
+              <span class="dish-price">24<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">أعواد من جبن الموزاريلا تغطى بالبقسماط المقرمش، تقلى حتى يذوب الجبن من الداخل.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="رقائق الجبنة">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">رقائق الجبنة</h3>
+              <span class="dots"></span>
+              <span class="dish-price">19<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">لفائف مقرمشة ذهبية محشوة بمزيج من الأجبان الذائبة.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="grills" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="4.5" y1="19.5" x2="19.5" y2="4.5"/><circle cx="8.3" cy="15.7" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="15.7" cy="8.3" r="1.5"/></svg></span>
+        <h2>المشويات</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="كبة لحم مشوية">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كبة لحم مشوية</h3>
+              <span class="dots"></span>
+              <span class="dish-price">30<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">3 حبات من الكبة المحشوة باللحم والمكسرات، مشوية على الفحم لتكسب طعماً مدخناً لا يُنسى.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="ريش غنم">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">ريش غنم</h3>
+              <span class="dots"></span>
+              <span class="dish-price">89<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">4 قطع من ريش الغنم الطرية المشوية، تُقدم مع البطاطس المهروسة الغنية بالزبدة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="أوصال لحم">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">أوصال لحم</h3>
+              <span class="dots"></span>
+              <span class="dish-price">67<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">3 أسياخ من قطع لحم الغنم الطرية مشوية لدرجة الكمال وتُقدم مع البطاطس المقلية.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="شيش طاووق">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">شيش طاووق</h3>
+              <span class="dots"></span>
+              <span class="dish-price">57<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">3 أسياخ من قطع الدجاج المشوية ببطء وتُقدم مع البطاطس المقلية.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="كباب دجاج">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كباب دجاج</h3>
+              <span class="dots"></span>
+              <span class="dish-price">52<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">3 أسياخ من الدجاج المشوية بعناية وتُقدم مع البطاطس المقلية.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="كباب لحم">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كباب لحم</h3>
+              <span class="dots"></span>
+              <span class="dish-price">67<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">3 أسياخ من لحم الغنم الطازج المشوي على الفحم وتُقدم مع البطاطس.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="كباب التوت والكرز">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كباب التوت والكرز</h3>
+              <span class="dots"></span>
+              <span class="dish-price">69<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">3 أسياخ من كباب اللحم المشوي، تغمرها صلصة الكرز والتوت البري الحلوة، تُقدم مع البطاطس.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="كباب بمتبل الباذنجان">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كباب بمتبل الباذنجان</h3>
+              <span class="dots"></span>
+              <span class="dish-price">69<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">3 أسياخ من كباب اللحم الفاخر المشوي، تُقدم بلمستنا الخاصة فوق طبقة من المتبل بمزيج دار بيروت.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="مشاوي دار بيروت">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">مشاوي دار بيروت<span class="badge">الأكثر طلباً</span></h3>
+              <span class="dots"></span>
+              <span class="dish-price">118<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">تشكيلة فاخرة من 6 أسياخ (لحم ودجاج) مع حبة ريش طرية وحبة كبة مقلية، تُقدم مع البطاطس المقلية.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="عرايس">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">عرايس</h3>
+              <span class="dots"></span>
+              <span class="dish-price">44<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">خبز محشو باللحم المتبل والمشوي على الفحم، يقدم مقرمشاً بلمسة لبنانية أصيلة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="وجبة مشاوي عائلية">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">وجبة مشاوي عائلية</h3>
+              <span class="dots"></span>
+              <span class="dish-price">148<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">وجبة مشاوي عائلية مكونة من كبابين لحم وشيش طاووقين وكبابي دجاج وأوصال غنم، تُقدم مع السلطة والأرز.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="وجبة شيش طاووق">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">وجبة شيش طاووق</h3>
+              <span class="dots"></span>
+              <span class="dish-price">38<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">وجبة مكونة من سيخين شيش طاووق مع السلطة والأرز.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="وجبة كباب دجاج">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">وجبة كباب دجاج</h3>
+              <span class="dots"></span>
+              <span class="dish-price">38<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">وجبة مكونة من سيخين كباب دجاج مع السلطة والأرز.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="وجبة كباب لحم">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">وجبة كباب لحم</h3>
+              <span class="dots"></span>
+              <span class="dish-price">38<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">وجبة مكونة من سيخين كباب لحم مع السلطة والأرز.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="وجبة أوصال لحم">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">وجبة أوصال لحم</h3>
+              <span class="dots"></span>
+              <span class="dish-price">38<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">وجبة مكونة من سيخين أوصال لحم مع السلطة والأرز.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="mains" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 3v6.5a1.8 1.8 0 001.8 1.8V21"/><path d="M7.5 3v4M9.7 3v4"/><path d="M16.8 3c-1.6 0-2.3 1.7-2.3 3.5v3c0 1.2.7 2 2 2V21"/></svg></span>
+        <h2>الأطباق الرئيسية</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="لحم بالكرز">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">لحم بالكرز</h3>
+              <span class="dots"></span>
+              <span class="dish-price">39<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مزيج فريد يجمع بين خبز التاكو ولحم الغنم المطهو بصلصة الكرز الحلوة لتقديم طعم لا يُنسى.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="فتة ورق عنب">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">فتة ورق عنب</h3>
+              <span class="dots"></span>
+              <span class="dish-price">29<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">حبات ورق العنب المقطعة مع صوص الزبادي والخبز المحمص وحبات الرمان.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="فتة باذنجان">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">فتة باذنجان</h3>
+              <span class="dots"></span>
+              <span class="dish-price">29<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">طبقات من الباذنجان المقلي، الخبز المقرمش، وصوص الزبادي، تُزين بالبصل المقرمش والمكسرات.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="ستيك تندرلوين">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">ستيك تندرلوين</h3>
+              <span class="dots"></span>
+              <span class="dish-price">93<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">3 قطع فاخرة من لحم التندرلوين الطري، مغطاة بصوص المشروم الغني، وتُقدم مع البطاطس المهروسة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="ستيك سلمون">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">ستيك سلمون</h3>
+              <span class="dots"></span>
+              <span class="dish-price">87<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">شريحة سلمون (250غ) مشوية بعناية مع صوص الليمون، تُقدم مع بطاطس مهروسة وخضار مشوية.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="فخارة كفتة بالطماطم">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">فخارة كفتة بالطماطم</h3>
+              <span class="dots"></span>
+              <span class="dish-price">47<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">كفتة اللحم التقليدية مطهوة مع صوص الطماطم الطازج.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="أرز أبيض">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">أرز أبيض</h3>
+              <span class="dots"></span>
+              <span class="dish-price">13<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">أرز أبيض فاخر مطهو على البخار يعلوه مكسرات وبصل مقرمش، الرفيق المثالي لجميع أطباقنا.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="كبة لبنية">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كبة لبنية</h3>
+              <span class="dots"></span>
+              <span class="dish-price">39<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">4 حبات كبة لحم بلمسة دار بيروت، تُقدم مع صوص اللبن المخمّر الدافئ، المزين بالصنوبر وتقلية الكزبرة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="فخارة كفتة لحم بالطحينة">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">فخارة كفتة لحم بالطحينة</h3>
+              <span class="dots"></span>
+              <span class="dish-price">49<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">كفتة لحم مشوية في فخار مع صوص الطحينة الكريمي، لمذاق غني وأصيل.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="western" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 9.5a7.5 3 0 0115 0z"/><line x1="4" y1="12.5" x2="20" y2="12.5"/><path d="M5 15.5h14a7 3 0 01-14 0z"/></svg></span>
+        <h2>الأطباق الغربية</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="بريسكت سلايدر برجر">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بريسكت سلايدر برجر</h3>
+              <span class="dots"></span>
+              <span class="dish-price">43<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">لحم بريسكت سلايدر بلمسة دار بيروت، يُقدم في خبز البرجر الطري وبجانبه أصابع البطاطس المقلية.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="سلايدر كريسبي برجر">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">سلايدر كريسبي برجر</h3>
+              <span class="dots"></span>
+              <span class="dish-price">39<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">سلايدر الدجاج المقرمش بخلطتنا الخاصة، يجمع بين طراوة الخبز ولذة الدجاج، يُقدم مع البطاطس المقلية.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="دايناميت تشيكن سيراتشا">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">دايناميت تشيكن سيراتشا</h3>
+              <span class="dots"></span>
+              <span class="dish-price">39<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قطع الدجاج المقرمشة والمغموسة بصوص الدايناميت بطعم لا يقاوم.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="دايناميت تشيكن">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">دايناميت تشيكن</h3>
+              <span class="dots"></span>
+              <span class="dish-price">35<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قطع الدجاج المقرمشة والمغموسة بصوص الدايناميت، بلمسة دار بيروت المتوازنة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="ريزوتو دجاج">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">ريزوتو دجاج</h3>
+              <span class="dots"></span>
+              <span class="dish-price">43<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مزيج حريري من الأرز الإيطالي الفاخر مع قطع الدجاج الطازجة والأعشاب.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="ريزوتو مشروم">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">ريزوتو مشروم</h3>
+              <span class="dots"></span>
+              <span class="dish-price">43<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">أرز إيطالي كريمي بنكهة المشروم البري والبارميزان.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="ستيك دجاج بالأعشاب">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">ستيك دجاج بالأعشاب</h3>
+              <span class="dots"></span>
+              <span class="dish-price">49<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">صدر دجاج مطهو بالأعشاب العطرية والكريمة الغنية مع الجبن، يُقدم بجانبه بطاطس مهروسة ناعمة.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="soup" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16a8 5.2 0 01-16 0z"/><path d="M9.3 6c0 1.1-1.1 1.1-1.1 2.2M14.7 6c0 1.1-1.1 1.1-1.1 2.2"/></svg></span>
+        <h2>الشوربة</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="شوربة عدس">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">شوربة عدس</h3>
+              <span class="dots"></span>
+              <span class="dish-price">19<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">شوربة العدس التقليدية المحضرة على الطريقة اللبنانية الأصيلة، تُقدم دافئة مع قطع الخبز المحمص والليمون.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="شوربة دجاج كريمي">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">شوربة دجاج كريمي</h3>
+              <span class="dots"></span>
+              <span class="dish-price">22<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">شوربة دجاج غنية بالكريمة الناعمة والمذاق المميز، تحتوي على قطع دجاج طازجة مع خضروات متنوعة.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="pizza" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l8.5 16h-17z"/><circle cx="12" cy="12.3" r=".9"/><circle cx="9.8" cy="15.6" r=".9"/><circle cx="14.2" cy="15.6" r=".9"/></svg></span>
+        <h2>البيتزا</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="بيتزا دجاج">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بيتزا دجاج</h3>
+              <span class="dots"></span>
+              <span class="dish-price">47<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">بيتزا لذيذة مع طبقة من صوص الطماطم الطازج، بقطع دجاج مشوي مع خضروات مثل الفلفل الأحمر.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="بيتزا خضار">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بيتزا خضار</h3>
+              <span class="dots"></span>
+              <span class="dish-price">45<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مزيج طازج من الفلفل الملون، الزيتون، المشروم، والذرة مع صلصتنا الخاصة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="بيتزا مارغريتا">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بيتزا مارغريتا</h3>
+              <span class="dots"></span>
+              <span class="dish-price">46<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">الطعم الإيطالي الكلاسيكي، صلصة طماطم طازجة ومكس أجبان.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="بيتزا بيبروني">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بيتزا بيبروني</h3>
+              <span class="dots"></span>
+              <span class="dish-price">48<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">شرائح بيبروني مقرمشة فوق طبقة سخية من جبن الموزاريلا الذائب.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="pasta" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5a7.5 7.5 0 100 15 5.6 5.6 0 100-11.2 3.7 3.7 0 100 7.4 1.9 1.9 0 110-3.8"/></svg></span>
+        <h2>الباستا</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="بيني ريحان">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بيني ريحان</h3>
+              <span class="dots"></span>
+              <span class="dish-price">48<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">معكرونة بيني بصوص طماطم طازج، مزينة بأوراق الريحان العطرة، ومزودة بلمسة من زيت الزيتون.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="سباغيتي بولونيز">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">سباغيتي بولونيز</h3>
+              <span class="dots"></span>
+              <span class="dish-price">44<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">المذاق الإيطالي التقليدي بصلصة اللحم والطماطم الغنية.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="فوتشيني دجاج">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">فوتشيني دجاج</h3>
+              <span class="dots"></span>
+              <span class="dish-price">49<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">شرائط الباستا الكلاسيكية بصوص الألفريدو الأبيض مع الفطر والدجاج.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="بيني أرابياتا بالجمبري">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">بيني أرابياتا بالجمبري</h3>
+              <span class="dots"></span>
+              <span class="dish-price">49<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">باستا بصلصة الطماطم الحارة مع الكريمة وحبات الجمبري بطريقتنا الخاصة.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="desserts" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 20l7.5-14.5L19.5 20z"/><path d="M4.5 20h15"/><circle cx="12" cy="9" r="1"/></svg></span>
+        <h2>الحلويات</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="تيراميسو">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">تيراميسو</h3>
+              <span class="dots"></span>
+              <span class="dish-price">23<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">سحاب من كريمة الماسكاربوني الفاخرة مع بسكويت مشبع بنكهة القهوة المركزة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="كيندر بان كوكيز">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كيندر بان كوكيز</h3>
+              <span class="dots"></span>
+              <span class="dish-price">25<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">كوكيز ساخن ومقرمش مخبوز في المقلاة، محشو بشوكولاتة الكيندر الذائبة مع إضافة الآيسكريم.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="سان سباستيان">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">سان سباستيان</h3>
+              <span class="dots"></span>
+              <span class="dish-price">23<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">كيكة إسبانية شهيرة، تتميز بقوامها الكريمي والذائب في الفم.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="كيكة شوكولاتة بالبندق">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كيكة شوكولاتة بالبندق</h3>
+              <span class="dots"></span>
+              <span class="dish-price">23<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مزيج فاخر من الكيك الغني بالشوكولاتة وقطع البندق المحمص للقرمشة المثالية.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="تشيز كيك بيكان">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">تشيز كيك بيكان</h3>
+              <span class="dots"></span>
+              <span class="dish-price">23<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">طبقة تشيز كيك غنية تعلوها لمسة صوص البيكان.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="cold-drinks" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 3.5h7.6l-1 14.6a2.8 2.8 0 01-2.8 2.6h0a2.8 2.8 0 01-2.8-2.6L8.2 3.5z"/><path d="M12 8v6M9.7 9.4l4.6 3.2M14.3 9.4l-4.6 3.2"/></svg></span>
+        <h2>المشروبات الباردة</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="آيس لاتيه">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">آيس لاتيه</h3>
+              <span class="dots"></span>
+              <span class="dish-price">16<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قهوة الإسبريسو مع الحليب ومكعبات الثلج.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="سبانيش لاتيه مثلجة">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">سبانيش لاتيه مثلجة</h3>
+              <span class="dots"></span>
+              <span class="dish-price">24<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قهوة الإسبريسو مع الحليب والثلج والحليب المكثف المحلى.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="آيس أمريكانو">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">آيس أمريكانو</h3>
+              <span class="dots"></span>
+              <span class="dish-price">15<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">جرعة من قهوة الإسبريسو المخففة مع الثلج.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="V60 بارد">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">V60 بارد</h3>
+              <span class="dots"></span>
+              <span class="dish-price">20<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قهوة سوداء مثلجة محضرة بطريقة التقطير.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="hot-drinks" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9.2h11v4.6a4 4 0 01-4 4H9a4 4 0 01-4-4V9.2z"/><path d="M16 10.3h1.4a2 2 0 010 4H16"/><path d="M8.2 4.8c0 1.1-1.1 1.1-1.1 2.2M12.4 4.8c0 1.1-1.1 1.1-1.1 2.2"/></svg></span>
+        <h2>المشروبات الساخنة</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="إسبريسو">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">إسبريسو</h3>
+              <span class="dots"></span>
+              <span class="dish-price">13<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">إسبريسو ساخن مركز بالمذاق المُر.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="ماكياتو">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">ماكياتو</h3>
+              <span class="dots"></span>
+              <span class="dish-price">12<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قهوة مكونة من الإسبريسو مع الحليب الرغوي.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="لاتيه">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">لاتيه</h3>
+              <span class="dots"></span>
+              <span class="dish-price">18<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قهوة الإسبريسو مع الحليب المبخر.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="سبانيش لاتيه">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">سبانيش لاتيه</h3>
+              <span class="dots"></span>
+              <span class="dish-price">19<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قهوة الإسبريسو مع الحليب المبخر والحليب المكثف المحلى.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="كابتشينو">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كابتشينو</h3>
+              <span class="dots"></span>
+              <span class="dish-price">18<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قهوة الإسبريسو مع حليب مبخر ورغوة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="كراميل ماكياتو">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كراميل ماكياتو</h3>
+              <span class="dots"></span>
+              <span class="dish-price">20<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مشروب قهوة بنكهة الكراميل، مزيج من الحليب والإسبريسو.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="قهوة تركية">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">قهوة تركية</h3>
+              <span class="dots"></span>
+              <span class="dish-price">10<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قهوة محضرة بالطريقة التركية التقليدية.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="شوكولاتة ساخنة">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">شوكولاتة ساخنة</h3>
+              <span class="dots"></span>
+              <span class="dish-price">18<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">شوكولاتة محلاة مع حليب طازج.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="أمريكانو">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">أمريكانو</h3>
+              <span class="dots"></span>
+              <span class="dish-price">15<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قهوة مخففة من الإسبريسو، تتميز بطعمها القوي والمرارة الخفيفة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="فلات وايت">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">فلات وايت</h3>
+              <span class="dots"></span>
+              <span class="dish-price">17<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قهوة الإسبريسو المركزة مع الحليب المبخر والرغوة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="V60">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">V60</h3>
+              <span class="dots"></span>
+              <span class="dish-price">20<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">قهوة سوداء ساخنة محضرة بطريقة التقطير.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="mojito" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 5h11l-4.5 8v7"/><path d="M9.3 6l2.7 4.2M14.7 6L12 10.2"/><path d="M9.5 20h5"/></svg></span>
+        <h2>الموهيتو</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="موهيتو سفن أب مع توت">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">موهيتو سفن أب مع توت</h3>
+              <span class="dots"></span>
+              <span class="dish-price">18<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مشروب منعش مكون من سفن أب الفوار مع نكهة التوت الطازجة والأعشاب.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="موهيتو كودريد توت">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">موهيتو كودريد توت</h3>
+              <span class="dots"></span>
+              <span class="dish-price">21<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مشروب موهيتو مميز مع الكودريد المنعش ونكهة التوت الحلوة مع النعناع والليمون.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="ميكس موهيتو دار بيروت سفن">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">ميكس موهيتو دار بيروت سفن</h3>
+              <span class="dots"></span>
+              <span class="dish-price">18<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">خليط مميز يحتوي على سفن أب الفوار مع نكهات الفواكه المنعشة وأوراق النعناع.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="موهيتو كودريد بطيخ">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">موهيتو كودريد بطيخ</h3>
+              <span class="dots"></span>
+              <span class="dish-price">21<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مشروب موهيتو بلمسة كودريد مفعمة بالحيوية، مع نكهة البطيخ الحلو المنعش.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="موهيتو كودريد فراولة">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">موهيتو كودريد فراولة</h3>
+              <span class="dots"></span>
+              <span class="dish-price">21<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">كودريد مفعم بالحيوية مع نكهة الفراولة الطبيعية وأوراق النعناع والليمون.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="موهيتو سفن أب بطيخ">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">موهيتو سفن أب بطيخ</h3>
+              <span class="dots"></span>
+              <span class="dish-price">18<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">سفن أب منعش مع نكهة البطيخ الطازج، وأوراق النعناع وشرائح الليمون.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="موهيتو سفن أب فراولة">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">موهيتو سفن أب فراولة</h3>
+              <span class="dots"></span>
+              <span class="dish-price">18<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">سفن أب خفيف ومنعش يجمع بين سفن أب الفوار ونكهة الفراولة الطازجة.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="juices" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16M6.6 6.6l10.8 10.8M17.4 6.6L6.6 17.4"/></svg></span>
+        <h2>العصائر الطازجة</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="عصير برتقال">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">عصير برتقال</h3>
+              <span class="dots"></span>
+              <span class="dish-price">21<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">عصير منعش محضر من البرتقال الطازج.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="عصير ليمون بالنعناع">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">عصير ليمون بالنعناع</h3>
+              <span class="dots"></span>
+              <span class="dish-price">19<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">عصير منعش محضر من الليمون والنعناع الطازج.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="عصير مانجو">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">عصير مانجو</h3>
+              <span class="dots"></span>
+              <span class="dish-price">19<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">عصير منعش محضر من المانجو الطازج.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="عصير فراولة">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">عصير فراولة</h3>
+              <span class="dots"></span>
+              <span class="dish-price">19<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">عصير منعش محضر من الفراولة الطازجة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="عصير جوافة">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">عصير جوافة</h3>
+              <span class="dots"></span>
+              <span class="dish-price">19<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">عصير منعش محضر من الجوافة الطازجة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="كوكتيل دار بيروت">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كوكتيل دار بيروت</h3>
+              <span class="dots"></span>
+              <span class="dish-price">21<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مزيج مميز من الفواكه الطازجة الموسمية، يُعد بعناية لخلق نكهات متوازنة ومنعشة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="سفنشم دار بيروت">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">سفنشم دار بيروت</h3>
+              <span class="dots"></span>
+              <span class="dish-price">26<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مزيج محلي ساحر من العنب الأسود والتوت البري والبرقوق الطازج.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="soda" class="menu-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.2 3h3.6v2.8l1.8 1.9v10.8a2 2 0 01-2 2h-3.2a2 2 0 01-2-2V7.7l1.8-1.9V3z"/><circle cx="11.2" cy="13.4" r=".6"/><circle cx="13.2" cy="16.3" r=".6"/></svg></span>
+        <h2>المشروبات الغازية</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="dish-grid">
+        <article class="dish">
+          <div class="dish-media" data-dish="مياه">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">مياه</h3>
+              <span class="dots"></span>
+              <span class="dish-price">3<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مياه عذبة للشرب، نقية ومنعشة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="كوكاكولا">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كوكاكولا</h3>
+              <span class="dots"></span>
+              <span class="dish-price">6<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مشروب غازي بنكهة فريدة ومنعشة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="كوكاكولا دايت">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">كوكاكولا دايت</h3>
+              <span class="dots"></span>
+              <span class="dish-price">6<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مشروب غازي بنكهة فريدة ومنعشة بدون سكر.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="سبرايت">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">سبرايت</h3>
+              <span class="dots"></span>
+              <span class="dish-price">6<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مشروب غازي بنكهة فريدة ومنعشة.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="dish-media" data-dish="فانتا برتقال">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><circle cx="8.3" cy="10" r="1.5"/><path d="M4 16.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg>
+            <span>صورة الطبق</span>
+          </div>
+          <div class="dish-body">
+            <div class="dish-top">
+              <h3 class="dish-name">فانتا برتقال</h3>
+              <span class="dots"></span>
+              <span class="dish-price">6<span class="sar"> ر.س</span></span>
+            </div>
+            <p class="dish-desc">مشروب غازي بنكهة فريدة ومنعشة مع نكهة البرتقال.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+</main>
+
+<footer>
+  <div class="brand">دار بيروت</div>
+  <div class="ornament" style="margin:10px 0 16px;">
+    <span class="line"></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z"/></svg>
+    <span class="line"></span>
+  </div>
+  <p>جميع الأسعار شاملة الضريبة المضافة ما لم يُذكر خلاف ذلك</p>
+</footer>
+
+<a href="#top" class="to-top" id="toTop" aria-label="العودة للأعلى">↑</a>
+
+<script>
+  // active nav highlight on scroll
+  const sections = document.querySelectorAll('.menu-section');
+  const pills = document.querySelectorAll('.nav-pill');
+  const toTop = document.getElementById('toTop');
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const id = entry.target.getAttribute('id');
+        pills.forEach(p=>p.classList.toggle('active', p.getAttribute('href') === '#'+id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+  sections.forEach(s=>io.observe(s));
+
+  window.addEventListener('scroll', ()=>{
+    toTop.classList.toggle('show', window.scrollY > 500);
+  });
+
+  // center active pill into view on nav scroller
+  pills.forEach(p=>{
+    p.addEventListener('click', ()=>{
+      setTimeout(()=>{ p.scrollIntoView({inline:'center', behavior:'smooth', block:'nearest'}); }, 300);
+    });
+  });
+</script>
+
+</body>
+</html>
